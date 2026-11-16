@@ -55,6 +55,7 @@ p{color:var(--muted)}
 .hero-buttons{justify-content:center;margin-top:38px;opacity:0;animation:heroFade .9s 2.25s ease forwards}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:34px;color:var(--muted);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:0;animation:heroFade .9s 2.5s ease forwards}
 .trust span:before{content:"✓ ";color:var(--gold)}
+.trust span:nth-child(1):before{color:#2F6BFF}.trust span:nth-child(2):before{color:var(--gold)}.trust span:nth-child(3):before{color:#E8202F}
 @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero:after{content:"";position:absolute;z-index:-1;right:0;bottom:0;left:0;height:240px;background:linear-gradient(to bottom,transparent,var(--bg))}
 .section-dark{background:var(--bg)}
@@ -110,7 +111,7 @@ p{color:var(--muted)}
 .legal-modal li{color:var(--muted);font-size:.84rem;line-height:1.8}
 .legal-updated{margin-top:10px;font-size:.72rem!important}
 @media(max-width:900px){.menu-grid{grid-template-columns:1fr 1fr}.contact-layout{grid-template-columns:1fr;gap:50px}.footer-main{flex-direction:column}.footer-nav{width:100%}}
-@media(max-width:650px){.section{padding:80px 0}.header-inner{min-height:78px}.brand-name{font-size:1.05rem}.brand-logo{width:50px}.hero-content{padding:130px 0 90px}.hero-buttons{flex-wrap:nowrap;gap:10px}.hero-buttons .button{flex:1 1 0;min-width:0;min-height:46px;padding:0 12px;font-size:.7rem;white-space:nowrap}.menu-grid{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.tab{white-space:nowrap}.footer-nav{grid-template-columns:1fr 1fr;gap:28px 20px}.modal{padding:12px}.modal-panel{max-height:calc(100svh - 24px);padding:32px 24px}}
+@media(max-width:650px){.section{padding:80px 0}.header-inner{min-height:78px}.brand-name{font-size:1.05rem}.brand-logo{width:50px}.hero-content{padding:130px 22px 90px}.hero-buttons{flex-wrap:nowrap;gap:12px;padding:0 6px}.trust{padding:0 10px;gap:8px 20px;font-size:.7rem}.hero-buttons .button{flex:1 1 0;min-width:0;min-height:46px;padding:0 12px;font-size:.7rem;white-space:nowrap}.menu-grid{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.tab{white-space:nowrap}.footer-nav{grid-template-columns:1fr 1fr;gap:28px 20px}.modal{padding:12px}.modal-panel{max-height:calc(100svh - 24px);padding:32px 24px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:1ms!important;transition-duration:1ms!important}.hero-video video{display:none}}
 </style>
 </head>
@@ -132,7 +133,7 @@ p{color:var(--muted)}
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
-    <div class="eyebrow">Filipino Catering</div>
+    <div class="eyebrow">Filipino Catering · Avondale, Auckland</div>
     <h1 class="hero-title">Hidden <span class="gold-text">Kusina</span></h1>
     <div class="button-row hero-buttons">
       <a class="button button-primary" href="#contact">Get In Touch</a>
