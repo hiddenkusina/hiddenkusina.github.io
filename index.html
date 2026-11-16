@@ -132,7 +132,7 @@ p{color:var(--muted)}
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
-    <div class="eyebrow">Filipino Catering · Avondale, Auckland</div>
+    <div class="eyebrow">Filipino Catering</div>
     <h1 class="hero-title">Hidden <span class="gold-text">Kusina</span></h1>
     <div class="button-row hero-buttons">
       <a class="button button-primary" href="#contact">Get In Touch</a>
@@ -151,7 +151,7 @@ p{color:var(--muted)}
     </div>
     <div class="tabs" id="menuTabs" role="tablist" aria-label="Menu categories"></div>
     <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
-    <p class="menu-note">Menu and pricing may change with seasonal ingredients. Please tell us about any allergies when ordering.</p>
+    <p class="menu-note">Menu and pricing may change with seasonal ingredients. Please tell us about any allergies when ordering. Pickup is standard; delivery is available at an additional cost.</p>
   </div>
 </section>
 
@@ -166,6 +166,7 @@ p{color:var(--muted)}
       <div class="contact-details">
         <a class="contact-item" id="emailLink" href="#"><span class="contact-label">Email Us</span><strong id="emailText"></strong><span class="contact-action">Send an email →</span></a>
         <a class="contact-item" id="phoneLink" href="#"><span class="contact-label">Call Us</span><strong id="phoneText"></strong><span class="contact-action">Call now →</span></a>
+        <a class="contact-item" id="addressLink" href="#" target="_blank" rel="noopener noreferrer"><span class="contact-label">Pickup Address</span><strong id="addressText"></strong><span class="contact-action">Get directions →</span></a>
       </div>
     </div>
   </div>
@@ -228,7 +229,9 @@ p{color:var(--muted)}
     <h2 id="orderTitle">Order Online</h2>
     <p class="modal-intro">Online ordering is simple. Choose your dishes from our menu, then send us your order and we will confirm everything with you.</p>
     <h3>How to order</h3>
-    <ul><li>Browse the <a href="#menu" data-close-modal>menu</a> and pick your dishes or catering package.</li><li>Email us at <a class="js-email" href="#"></a> or call <a class="js-phone" href="#"></a>.</li><li>Include your preferred date and time, number of guests, pickup or delivery details and any allergies or dietary needs.</li><li>We will confirm availability, pricing and payment details with you.</li></ul>
+    <ul><li>Browse the <a href="#menu" data-close-modal>menu</a> and pick your dishes or catering package.</li><li>Email us at <a class="js-email" href="#"></a> or call <a class="js-phone" href="#"></a>.</li><li>Include your preferred date and time, number of guests, whether you would like pickup or delivery, and any allergies or dietary needs.</li><li>We will confirm availability, pricing and payment details with you.</li></ul>
+    <h3>Pickup and delivery</h3>
+    <p>Pickup is the default for all orders and is collected from our kitchen at <span class="js-address-text"></span>. Delivery is available on request at the purchaser's additional expense. The delivery fee depends on the distance and the size of the order, and we will confirm it with you before your order is finalised.</p>
     <h3>Notice</h3>
     <p>For catering and large orders, please contact us as early as possible so we can prepare everything fresh.</p>
   </div>
@@ -288,7 +291,7 @@ p{color:var(--muted)}
     <h3>Allergens and dietary requirements</h3>
     <p>You must tell us about any allergies, intolerances or dietary needs when ordering. Our dishes may contain or come into contact with common allergens such as peanuts, tree nuts, soy, egg, milk, fish, shellfish, sesame, gluten and wheat. We take care to follow our food safety procedures but, because we prepare multiple dishes in one kitchen, we cannot guarantee any dish is completely free of an allergen unless we expressly confirm it in writing.</p>
     <h3>Pickup, delivery and food handling</h3>
-    <p>Hot food should be kept hot (above 60°C) and cold food kept cold (at or below 4°C). Once food leaves our care, you are responsible for storing, reheating and serving it safely. Please consume food within the time we advise and do not keep it at room temperature for more than two hours. Delivery times are estimates and may be affected by traffic or weather.</p>
+    <p>Pickup is the default for all orders and is collected from our kitchen at <span class="js-address-text"></span>. Delivery is available on request at the purchaser's additional expense, and the delivery fee will be quoted and confirmed before your order is accepted. Hot food should be kept hot (above 60°C) and cold food kept cold (at or below 4°C). Once food leaves our care, you are responsible for storing, reheating and serving it safely. Please consume food within the time we advise and do not keep it at room temperature for more than two hours. Delivery times are estimates and may be affected by traffic or weather.</p>
     <h3>Catering</h3>
     <p>Please provide final guest numbers, venue details and access information by the deadline we give you. Reductions or cancellations may be subject to the cancellation terms below.</p>
     <h3>Cancellations and changes</h3>
@@ -313,7 +316,8 @@ p{color:var(--muted)}
   /* ====== EASY-TO-EDIT SETTINGS ====== */
   var CONFIG = {
     email: "hiddenkusina@gmail.com",
-    phone: "021 082 44665"
+    phone: "021 082 44665",
+    address: "9 Blumhardt Place, Avondale, Auckland"
   };
 
   /* ====== MENU (edit dishes here) ======
@@ -361,6 +365,9 @@ p{color:var(--muted)}
   set(".js-email-text", function (el) { el.textContent = CONFIG.email; });
   document.getElementById("emailText").textContent = CONFIG.email;
   document.getElementById("phoneText").textContent = CONFIG.phone;
+  document.getElementById("addressText").textContent = CONFIG.address;
+  document.getElementById("addressLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.address);
+  set(".js-address-text", function (el) { el.textContent = CONFIG.address; });
 
   /* ---------- Menu tabs ---------- */
   var tabs = document.getElementById("menuTabs"), grid = document.getElementById("menuGrid");
