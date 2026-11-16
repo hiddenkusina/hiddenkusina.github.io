@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Hidden Kusina is a registered Filipino catering business in Avondale, Auckland. Authentic home-style Filipino meals, snacks, drinks and catering." name="description"/>
+<meta content="#0A0A0A" name="theme-color"/>
+<title>Hidden Kusina</title>
+<meta content="website" property="og:type"/>
+<meta content="Hidden Kusina" property="og:title"/>
+<meta content="Authentic Filipino catering in Avondale, Auckland." property="og:description"/>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="images/favicon.png" rel="apple-touch-icon"/>
+<style>
+:root{--bg:#0A0A0A;--bg-light:#141414;--soft:#1E1E1E;--gold:#FFC72C;--gold-light:#FFDD73;--white:#fff;--muted:#B3B3B3;--border:rgba(255,255,255,.14);--radius:28px;--radius-sm:16px;--t:300ms ease}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,system-ui,"Helvetica Neue","Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}button{cursor:pointer}
+.container{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.section{padding:110px 0;position:relative}
+.section-heading{max-width:700px;margin-bottom:50px}
+.eyebrow{color:var(--gold);font-size:.76rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:15px}
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:1.12}
+h1{font-size:clamp(3rem,8vw,7.5rem)}h2{font-size:clamp(2.3rem,5vw,4.5rem)}h3{font-size:1.5rem}
+p{color:var(--muted)}
+.section-heading p{margin-top:20px;max-width:600px;font-size:1.05rem}
+.gold-text{color:var(--gold)}
+.button-row{display:flex;flex-wrap:wrap;gap:14px}
+.button{min-height:54px;display:inline-flex;align-items:center;justify-content:center;padding:0 28px;border:1px solid transparent;border-radius:var(--radius-sm);font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:all var(--t)}
+.button:hover{transform:translateY(-3px)}
+.button-primary{background:var(--gold);color:var(--bg)}.button-primary:hover{background:var(--gold-light)}
+.button-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,.4)}.button-outline:hover{border-color:var(--gold);color:var(--gold)}
+.site-header{position:fixed;z-index:100;top:0;left:0;width:100%;transition:background var(--t)}
+.site-header.scrolled{background:rgba(10,10,10,.9);backdrop-filter:blur(18px)}
+.header-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:inline-flex;align-items:center;gap:12px}
+.brand-logo{width:58px;height:auto;object-fit:contain}
+.brand-name{font-size:1.3rem;font-weight:600;letter-spacing:-.035em;white-space:nowrap}.brand-name span{color:var(--gold)}
+.site-intro{position:fixed;z-index:200;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);transition:opacity .9s ease,visibility .9s ease}
+.site-intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.intro-brand{display:flex;align-items:center;flex-direction:column;gap:24px;text-align:center;animation:introReveal 1.2s ease both}
+.intro-logo{width:180px;height:auto}
+.intro-name{font-size:clamp(2rem,5vw,4rem);font-weight:500;letter-spacing:-.05em}.intro-name span{color:var(--gold)}
+@keyframes introReveal{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden}
+.hero-video{position:absolute;z-index:-3;inset:0;background:linear-gradient(135deg,#1a1400,#0A0A0A),url("images/hero-fallback.jpg") center/cover}
+.hero-video video{position:absolute;top:50%;left:50%;width:100%;height:100%;transform:translate(-50%,-50%) scale(1.12);opacity:.6;object-fit:cover;filter:blur(2px);pointer-events:none}
+.hero-overlay{position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.96),rgba(10,10,10,.6) 50%,rgba(10,10,10,.82)),linear-gradient(0deg,rgba(10,10,10,.9),transparent 50%,rgba(10,10,10,.4))}
+.hero-content{width:min(900px,100%);padding:150px 0 100px;text-align:center}
+.hero-content .eyebrow{opacity:0;animation:heroFade .9s 1.8s ease forwards}
+.hero-title{margin:0 auto;opacity:0;animation:heroFade .9s 1.95s ease forwards}
+.hero-buttons{justify-content:center;margin-top:38px;opacity:0;animation:heroFade .9s 2.25s ease forwards}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:34px;color:var(--muted);font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:0;animation:heroFade .9s 2.5s ease forwards}
+.trust span:before{content:"✓ ";color:var(--gold)}
+@keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero:after{content:"";position:absolute;z-index:-1;right:0;bottom:0;left:0;height:240px;background:linear-gradient(to bottom,transparent,var(--bg))}
+.section-dark{background:var(--bg)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.tab{min-height:44px;padding:0 22px;border:1px solid var(--border);border-radius:var(--radius-sm);background:transparent;color:var(--muted);font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:all var(--t)}
+.tab:hover{border-color:var(--gold);color:var(--gold)}
+.tab.active{background:var(--gold);border-color:var(--gold);color:var(--bg)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card,.contact-item{border:1px solid rgba(255,255,255,.12);background:rgba(30,30,30,.55);box-shadow:0 16px 40px rgba(0,0,0,.28);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);transition:all var(--t)}
+.card{display:flex;flex-direction:column;border-radius:var(--radius);overflow:hidden;animation:heroFade .5s ease both}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,199,44,.4)}
+.card-img{height:190px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#2a2208,#141414)}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:26px 28px 30px}
+.card-body h3{font-size:1.3rem}
+.card-body p{margin-top:10px;font-size:.9rem}
+.card-price{display:block;margin-top:14px;color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.menu-note{margin-top:28px;font-size:.8rem}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.contact-details{display:grid;gap:12px}
+.contact-item{display:flex;flex-direction:column;padding:25px;border-radius:var(--radius)}
+.contact-item:hover{transform:translateX(4px);border-color:rgba(255,199,44,.4)}
+.contact-label{color:var(--gold);font-size:.64rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.contact-item strong{margin-top:8px;font-size:1.02rem;font-weight:500}
+.contact-action{margin-top:9px;color:var(--muted);font-size:.7rem}
+.footer-socials{display:flex;gap:14px;margin-top:18px}
+.footer-socials a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:all var(--t)}
+.footer-socials a:hover{color:var(--gold-light);transform:translateY(-2px)}
+.footer-socials svg{width:20px;height:20px}
+.site-footer{padding:70px 0 28px;background:#050505}
+.footer-main{display:flex;justify-content:space-between;gap:48px;padding-bottom:50px;flex-wrap:wrap}
+.footer-nav{display:grid;grid-template-columns:repeat(3,minmax(120px,1fr));gap:32px 40px}
+.footer-heading{display:block;margin-bottom:14px;color:var(--gold);font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.footer-nav a,.footer-nav button{display:block;width:fit-content;margin-bottom:11px;padding:0;border:0;background:transparent;color:var(--muted);font-size:.8rem;text-align:left;transition:color var(--t)}
+.footer-nav a:hover,.footer-nav button:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);text-align:center}
+.footer-bottom p{width:100%;font-size:.72rem}
+.modal{position:fixed;z-index:300;inset:0;display:flex;align-items:center;justify-content:center;padding:25px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
+.modal.open{opacity:1;visibility:visible;pointer-events:auto}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.modal-panel{position:relative;z-index:1;width:min(680px,100%);max-height:min(850px,calc(100svh - 50px));overflow-y:auto;padding:45px;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:rgba(20,20,20,.9);box-shadow:0 24px 64px rgba(0,0,0,.45);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:translateY(20px) scale(.98);transition:transform .35s ease}
+.modal.open .modal-panel{transform:none}
+.modal-close{position:absolute;top:18px;right:18px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:50%;background:transparent;color:var(--muted);font-size:1.55rem;line-height:1;transition:all var(--t)}
+.modal-close:hover{border-color:var(--gold);color:var(--gold)}
+.modal-panel h2{margin-top:8px;font-size:clamp(2.1rem,5vw,3.6rem)}
+.modal-intro{margin-top:22px;color:var(--white)!important;font-size:.98rem;line-height:1.75}
+.legal-modal h3{margin-top:30px;font-size:1.02rem;font-weight:600}
+.legal-modal h3+p{margin-top:10px}
+.legal-modal p{font-size:.84rem;line-height:1.8}
+.legal-modal p+p{margin-top:12px}
+.legal-modal a{color:var(--gold)}
+.legal-modal ul{margin:10px 0 0 20px}
+.legal-modal li{color:var(--muted);font-size:.84rem;line-height:1.8}
+.legal-updated{margin-top:10px;font-size:.72rem!important}
+@media(max-width:900px){.menu-grid{grid-template-columns:1fr 1fr}.contact-layout{grid-template-columns:1fr;gap:50px}.footer-main{flex-direction:column}.footer-nav{width:100%}}
+@media(max-width:650px){.section{padding:80px 0}.header-inner{min-height:78px}.brand-name{font-size:1.05rem}.brand-logo{width:50px}.hero-content{padding:130px 0 90px}.hero-buttons{flex-wrap:nowrap;gap:10px}.hero-buttons .button{flex:1 1 0;min-width:0;min-height:46px;padding:0 12px;font-size:.7rem;white-space:nowrap}.menu-grid{grid-template-columns:1fr}.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.tab{white-space:nowrap}.footer-nav{grid-template-columns:1fr 1fr;gap:28px 20px}.modal{padding:12px}.modal-panel{max-height:calc(100svh - 24px);padding:32px 24px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:1ms!important;transition-duration:1ms!important}.hero-video video{display:none}}
+</style>
+</head>
+<body>
+<div class="site-intro" id="siteIntro">
+  <div class="intro-brand"><img class="intro-logo" src="images/logo.png" alt=""><div class="intro-name">Hidden <span>Kusina</span></div></div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="Hidden Kusina home"><img class="brand-logo" src="images/logo.png" alt="Hidden Kusina logo"><div class="brand-name">Hidden <span>Kusina</span></div></a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay loop muted playsinline poster="images/hero-fallback.jpg" preload="auto"><source src="videos/hidden-kusina-hero.mp4" type="video/mp4"/></video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">Filipino Catering · Avondale, Auckland</div>
+    <h1 class="hero-title">Hidden <span class="gold-text">Kusina</span></h1>
+    <div class="button-row hero-buttons">
+      <a class="button button-primary" href="#contact">Get In Touch</a>
+      <a class="button button-outline" href="#menu">Menu</a>
+    </div>
+    <div class="trust"><span>Registered Food Business</span><span>Certified &amp; Compliant</span><span>Food Act 2014</span></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="menu">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Menu</div>
+      <h2>Taste the <span class="gold-text">hidden gem</span></h2>
+      <p>Home-style Filipino cooking, made fresh to order. Browse our dishes by category, then get in touch to place your order.</p>
+    </div>
+    <div class="tabs" id="menuTabs" role="tablist" aria-label="Menu categories"></div>
+    <div class="menu-grid" id="menuGrid" aria-live="polite"></div>
+    <p class="menu-note">Menu and pricing may change with seasonal ingredients. Please tell us about any allergies when ordering.</p>
+  </div>
+</section>
+
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="section-heading">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Hungry for <span class="gold-text">something authentic</span>?</h2>
+        <p>From family lunches to fiesta-sized celebrations, Hidden Kusina brings the warmth of a Filipino kitchen to your table. Tell us what you are craving and let us start cooking.</p>
+      </div>
+      <div class="contact-details">
+        <a class="contact-item" id="emailLink" href="#"><span class="contact-label">Email Us</span><strong id="emailText"></strong><span class="contact-action">Send an email →</span></a>
+        <a class="contact-item" id="phoneLink" href="#"><span class="contact-label">Call Us</span><strong id="phoneText"></strong><span class="contact-action">Call now →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="brand" href="#home" aria-label="Hidden Kusina home"><img class="brand-logo" src="images/logo.png" alt="Hidden Kusina logo"><div class="brand-name">Hidden <span>Kusina</span></div></a>
+        <div class="footer-socials" aria-label="Social media">
+          <a aria-label="Hidden Kusina Facebook" href="https://facebook.com/HiddenKusinaNZ" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93v-1.9c0-.86.24-1.44 1.47-1.44h1.57V4.14C16.24 4.06 15.3 4 14.2 4c-2.3 0-3.87 1.4-3.87 4v2.44H7.77v2.96h2.56V21h3.17Z"/></svg></a>
+          <a aria-label="Hidden Kusina Instagram" href="https://instagram.com/HiddenKusinaNZ" target="_blank" rel="noopener noreferrer"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="17" rx="5" width="17" x="3.5" y="3.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.15" cy="6.85" r="1"/></svg></a>
+          <a aria-label="Hidden Kusina TikTok" href="https://tiktok.com/@HiddenKusinaNZ" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M16.6 3c.3 2 1.6 3.7 3.6 4.2v2.9c-1.4 0-2.7-.4-3.8-1.2v6.1c0 3.2-2.6 5.8-5.8 5.8S4.8 18.2 4.8 15s2.6-5.8 5.8-5.8c.3 0 .6 0 .9.1v3.1c-.3-.1-.6-.2-.9-.2-1.6 0-2.8 1.3-2.8 2.8s1.3 2.8 2.8 2.8 2.9-1.2 2.9-2.8V3h3.1Z"/></svg></a>
+          <a aria-label="Hidden Kusina YouTube" href="https://youtube.com/@HiddenKusinaNZ" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M21.6 7.6c-.2-1-1-1.8-2-2C17.9 5.2 12 5.2 12 5.2s-5.9 0-7.6.4c-1 .2-1.8 1-2 2C2 9.3 2 12 2 12s0 2.7.4 4.4c.2 1 1 1.8 2 2 1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4c1-.2 1.8-1 2-2 .4-1.7.4-4.4.4-4.4s0-2.7-.4-4.4ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div><span class="footer-heading">Food</span>
+          <button data-modal="order" type="button">Order Online</button>
+          <a href="#menu">Menu</a></div>
+        <div><span class="footer-heading">Information</span>
+          <button data-modal="about" type="button">About Us</button>
+          <a href="#contact">Contact</a></div>
+        <div><span class="footer-heading">Legal</span>
+          <button data-modal="privacy" type="button">Privacy Policy</button>
+          <button data-modal="terms" type="button">Terms &amp; Conditions</button></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="currentYear">2026</span> Hidden Kusina</p><p>Registered &amp; certified food business · Avondale, Auckland, New Zealand</p></div>
+  </div>
+</footer>
+
+<!-- About -->
+<div class="modal" id="modal-about" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="aboutTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel legal-modal">
+    <button class="modal-close" data-close-modal type="button" aria-label="Close About Us">×</button>
+    <div class="eyebrow">Information</div>
+    <h2 id="aboutTitle">About Us</h2>
+    <p class="modal-intro">Hidden Kusina is a professional Filipino catering business based in Avondale, Auckland. We are a hidden gem: a small kitchen cooking big, authentic flavours for homes, workplaces and celebrations across the city.</p>
+    <h3>Why “Hidden Kusina”?</h3>
+    <p>In Tagalog, <em>kusina</em> means kitchen. Ours is tucked away in Avondale, which is where the name comes from. We are the kind of place people discover by word of mouth and keep coming back to.</p>
+    <h3>What we do</h3>
+    <p>We cook traditional Filipino dishes the way they are made at home, from slow-simmered classics and crowd-pleasing snacks to desserts and refreshing drinks. We cater for small gatherings, family fiestas, corporate events and everything in between.</p>
+    <h3>Certified and registered</h3>
+    <p>Hidden Kusina is a registered food business operating under a verified food safety programme in line with the Food Act 2014. Our kitchen is registered and our processes are certified, regularly verified and held to the standards required in New Zealand. Our registration and certification details are available on request.</p>
+    <h3>Our promise</h3>
+    <ul><li>Fresh ingredients, prepared with care and cooked to order.</li><li>Safe food handling, clear allergen information and hygienic preparation.</li><li>Honest pricing and reliable, professional service.</li></ul>
+  </div>
+</div>
+
+<!-- Order -->
+<div class="modal" id="modal-order" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="orderTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel legal-modal">
+    <button class="modal-close" data-close-modal type="button" aria-label="Close Order Online">×</button>
+    <div class="eyebrow">Food</div>
+    <h2 id="orderTitle">Order Online</h2>
+    <p class="modal-intro">Online ordering is simple. Choose your dishes from our menu, then send us your order and we will confirm everything with you.</p>
+    <h3>How to order</h3>
+    <ul><li>Browse the <a href="#menu" data-close-modal>menu</a> and pick your dishes or catering package.</li><li>Email us at <a class="js-email" href="#"></a> or call <a class="js-phone" href="#"></a>.</li><li>Include your preferred date and time, number of guests, pickup or delivery details and any allergies or dietary needs.</li><li>We will confirm availability, pricing and payment details with you.</li></ul>
+    <h3>Notice</h3>
+    <p>For catering and large orders, please contact us as early as possible so we can prepare everything fresh.</p>
+  </div>
+</div>
+
+<!-- Privacy -->
+<div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="privacyTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel legal-modal">
+    <button class="modal-close" data-close-modal type="button" aria-label="Close Privacy Policy">×</button>
+    <div class="eyebrow">Legal</div>
+    <h2 id="privacyTitle">Privacy Policy</h2>
+    <p class="legal-updated">Last updated: 16 November 2026</p>
+    <p class="modal-intro">Your privacy matters to us. This policy explains how Hidden Kusina collects, uses, stores, discloses and protects personal information when you use this website or order from us. We handle personal information in line with the Privacy Act 2020 and its Information Privacy Principles.</p>
+    <h3>Who we are</h3>
+    <p>Hidden Kusina (“we”, “us”, “our”) is a registered food business based in Avondale, Auckland, New Zealand. We are responsible for the personal information described in this policy.</p>
+    <h3>What we collect</h3>
+    <ul><li>Contact details, such as your name, email address, phone number and delivery address.</li><li>Order details, such as dishes ordered, event date, guest numbers and payment records. Payment card details are handled by our payment providers and are not stored by us.</li><li>Allergy and dietary information you give us so we can prepare your food safely. We use it only to fulfil your order and keep you safe.</li><li>Messages and enquiries sent to <span class="js-email-text"></span> or by phone.</li><li>Technical information, such as IP address, device and browser type, and pages visited.</li></ul>
+    <h3>Why we use it</h3>
+    <p>We use personal information to take and prepare orders, deliver food, manage allergen and dietary requirements, process payments, respond to enquiries, keep food safety and traceability records, improve our service, and comply with our legal obligations. We do not sell your personal information.</p>
+    <h3>Food safety records</h3>
+    <p>The Food Act 2014 requires us to keep certain records, including those needed to trace food and respond to a food safety incident. Where necessary, we may share relevant information with the Ministry for Primary Industries, Auckland Council, the Ministry of Health or other authorities.</p>
+    <h3>Who we share it with</h3>
+    <p>We share information only where needed: with delivery and payment providers, website and email service providers, accountants and professional advisers, and public bodies such as Inland Revenue, regulators and the Police where required or permitted by law. Our service providers must protect your information. Some may store it outside New Zealand, and we take reasonable steps to ensure comparable safeguards apply.</p>
+    <h3>Cookies and browser storage</h3>
+    <p>We use website analytics to understand how our site performs. We do not use your information for third-party advertising. You can clear your browser storage or block cookies in your browser settings.</p>
+    <h3>Marketing messages</h3>
+    <p>We send marketing messages only with your consent or where the Unsolicited Electronic Messages Act 2007 permits, and every one includes a way to unsubscribe. Order and service messages are not marketing.</p>
+    <h3>Security and retention</h3>
+    <p>We use reasonable safeguards to protect personal information. We keep it only as long as needed for our purposes or as the law requires, for example seven years for tax records, then delete or de-identify it. We will never ask for your password or card PIN by email, phone or text.</p>
+    <h3>Access and correction</h3>
+    <p>You may ask for a copy of your personal information and ask us to correct it. Email us and we will respond within 20 working days. You may withdraw marketing consent at any time.</p>
+    <h3>Privacy breaches</h3>
+    <p>If a privacy breach is likely to cause serious harm, we will notify affected people and the Office of the Privacy Commissioner as required.</p>
+    <h3>Children</h3>
+    <p>Our website is intended for people aged 18 or over. We do not knowingly collect personal information from children.</p>
+    <h3>Changes and complaints</h3>
+    <p>We may update this policy from time to time. The version on this website is the current one. For privacy enquiries or complaints, contact <a class="js-email" href="#"></a>. If unresolved, you may complain to the Office of the Privacy Commissioner at privacy.org.nz or on 0800 803 909.</p>
+  </div>
+</div>
+
+<!-- Terms -->
+<div class="modal" id="modal-terms" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="termsTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel legal-modal">
+    <button class="modal-close" data-close-modal type="button" aria-label="Close Terms and Conditions">×</button>
+    <div class="eyebrow">Legal</div>
+    <h2 id="termsTitle">Terms &amp; Conditions</h2>
+    <p class="legal-updated">Last updated: 16 November 2026</p>
+    <p class="modal-intro">These terms apply to your use of the Hidden Kusina website and to any food, catering or other services you order from us. By using this website or placing an order, you agree to them.</p>
+    <h3>Who we are</h3>
+    <p>Hidden Kusina (“we”, “us”, “our”) is a registered and certified food business based in Avondale, Auckland, New Zealand. We operate under a food safety programme in line with the Food Act 2014 and the Food Regulations 2015, and our food is prepared in accordance with the Australia New Zealand Food Standards Code.</p>
+    <h3>Orders</h3>
+    <p>An order is confirmed only when we confirm it with you, by email, phone or message. We may decline or limit an order, for example due to capacity, ingredient availability or safety concerns. Menu items, ingredients and prices may change without notice, and photos are for illustration only.</p>
+    <h3>Pricing and payment</h3>
+    <p>Prices are in New Zealand dollars. We will tell you whether GST is included or added. For catering and large orders we may require a deposit or full payment before preparation. Payment is due on the terms we confirm with you.</p>
+    <h3>Allergens and dietary requirements</h3>
+    <p>You must tell us about any allergies, intolerances or dietary needs when ordering. Our dishes may contain or come into contact with common allergens such as peanuts, tree nuts, soy, egg, milk, fish, shellfish, sesame, gluten and wheat. We take care to follow our food safety procedures but, because we prepare multiple dishes in one kitchen, we cannot guarantee any dish is completely free of an allergen unless we expressly confirm it in writing.</p>
+    <h3>Pickup, delivery and food handling</h3>
+    <p>Hot food should be kept hot (above 60°C) and cold food kept cold (at or below 4°C). Once food leaves our care, you are responsible for storing, reheating and serving it safely. Please consume food within the time we advise and do not keep it at room temperature for more than two hours. Delivery times are estimates and may be affected by traffic or weather.</p>
+    <h3>Catering</h3>
+    <p>Please provide final guest numbers, venue details and access information by the deadline we give you. Reductions or cancellations may be subject to the cancellation terms below.</p>
+    <h3>Cancellations and changes</h3>
+    <p>Please give us as much notice as possible. Because food is prepared fresh to order, we may retain deposits or charge for ingredients and work already completed if you cancel or change an order at short notice. We will cancel and refund in full if we cannot fulfil your order.</p>
+    <h3>Your consumer rights</h3>
+    <p>Nothing in these terms limits your rights under the Consumer Guarantees Act 1993 or the Fair Trading Act 1986 that cannot lawfully be excluded. If food is unsafe, not as described or not of acceptable quality, contact us promptly, ideally within 24 hours, with details and photos, and we will put it right as the law requires. You must also contact us immediately if you suspect an allergic reaction or food-related illness, and seek medical help where needed.</p>
+    <h3>Website use</h3>
+    <p>You must not use the website unlawfully, interfere with its security or operation, or scrape or copy its content. The Hidden Kusina name, logo, text and images are owned by or licensed to us and protected by the Copyright Act 1994.</p>
+    <h3>Disclaimers and liability</h3>
+    <p>The website is provided “as is”. To the extent the law allows, we are not liable for indirect or consequential loss, or for loss caused by events beyond our reasonable control. Our total liability for any order is limited to the amount you paid for it. This does not limit liability that cannot be lawfully excluded. If you order for business purposes, you agree that, to the extent the law allows, the Consumer Guarantees Act 1993 and the Fair Trading Act 1986 do not apply.</p>
+    <h3>Privacy</h3>
+    <p>Our Privacy Policy forms part of these terms.</p>
+    <h3>Complaints and disputes</h3>
+    <p>Email <a class="js-email" href="#"></a> and we will acknowledge your complaint and try to resolve it in good faith. This does not limit your right to go to the Disputes Tribunal, the courts or any other body.</p>
+    <h3>General</h3>
+    <p>These terms are governed by New Zealand law, and the New Zealand courts have non-exclusive jurisdiction. We may update these terms from time to time, and continued use of the website means you accept the updated terms. If any provision is unenforceable, the rest continues to apply.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* ====== EASY-TO-EDIT SETTINGS ====== */
+  var CONFIG = {
+    email: "order@hiddenkusina.co.nz",
+    phone: "012 345 6789"
+  };
+
+  /* ====== MENU (edit dishes here) ======
+     image: put a photo path like "images/adobo.jpg" to replace the emoji. price is optional. */
+  var MENU = {
+    "Meals": [
+      {n:"Chicken Adobo",d:"Chicken braised in soy, vinegar, garlic and bay leaf, served with steamed rice.",e:"🍗"},
+      {n:"Pork Sinigang",d:"Sour tamarind broth with tender pork and fresh vegetables.",e:"🍲"},
+      {n:"Kare-Kare",d:"Oxtail and vegetables in a rich peanut sauce with bagoong on the side.",e:"🥘"},
+      {n:"Pork Sisig",d:"Sizzling chopped pork with onion, chilli and calamansi.",e:"🍖"},
+      {n:"Beef Caldereta",d:"Slow-cooked beef stew in a savoury tomato and liver sauce.",e:"🥩"},
+      {n:"Pancit Canton",d:"Stir-fried egg noodles with chicken, prawns and vegetables.",e:"🍜"}
+    ],
+    "Snacks": [
+      {n:"Lumpiang Shanghai",d:"Crispy mini spring rolls filled with seasoned pork and vegetables.",e:"🥟"},
+      {n:"Pork BBQ Skewers",d:"Sweet and smoky marinated pork grilled over charcoal.",e:"🍢"},
+      {n:"Chicken Empanada",d:"Golden pastry parcels with a savoury chicken filling.",e:"🥐"},
+      {n:"Turon",d:"Caramelised banana and jackfruit wrapped in crisp pastry.",e:"🍌"}
+    ],
+    "Desserts": [
+      {n:"Halo-Halo",d:"Shaved ice with sweet beans, fruits, leche flan, ube and ice cream.",e:"🍧"},
+      {n:"Leche Flan",d:"Silky caramel custard made with rich egg yolks.",e:"🍮"},
+      {n:"Bibingka",d:"Soft coconut rice cake with a lightly caramelised top.",e:"🥮"},
+      {n:"Ube Halaya",d:"Creamy purple yam jam with a velvety texture.",e:"🍠"}
+    ],
+    "Drinks": [
+      {n:"Calamansi Juice",d:"Fresh, tangy and refreshing Filipino citrus.",e:"🍋"},
+      {n:"Sago't Gulaman",d:"Brown sugar drink with tapioca pearls and jelly.",e:"🥤"},
+      {n:"Buko Juice",d:"Fresh young coconut water with tender coconut strips.",e:"🥥"},
+      {n:"Mango Shake",d:"Thick and creamy shake made from sweet ripe mangoes.",e:"🥭"}
+    ],
+    "Cater": [
+      {n:"Party Trays",d:"Generous trays of your favourite dishes, ready for sharing.",e:"🍱"},
+      {n:"Fiesta Package",d:"A full Filipino spread for birthdays, weddings and celebrations.",e:"🎉"},
+      {n:"Corporate Lunch",d:"Individually packed meals for meetings and workplace events.",e:"💼"},
+      {n:"Kamayan Feast",d:"A traditional banana-leaf spread for sharing by hand.",e:"🍃"}
+    ]
+  };
+
+  /* ---------- Contact details ---------- */
+  var tel = CONFIG.phone.replace(/[^\d+]/g, "");
+  function set(sel, fn) { document.querySelectorAll(sel).forEach(fn); }
+  set("#emailLink,.js-email", function (el) { el.href = "mailto:" + CONFIG.email; if (el.classList.contains("js-email")) el.textContent = CONFIG.email; });
+  set("#phoneLink,.js-phone", function (el) { el.href = "tel:" + tel; if (el.classList.contains("js-phone")) el.textContent = CONFIG.phone; });
+  set(".js-email-text", function (el) { el.textContent = CONFIG.email; });
+  document.getElementById("emailText").textContent = CONFIG.email;
+  document.getElementById("phoneText").textContent = CONFIG.phone;
+
+  /* ---------- Menu tabs ---------- */
+  var tabs = document.getElementById("menuTabs"), grid = document.getElementById("menuGrid");
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+  function show(cat) {
+    tabs.querySelectorAll(".tab").forEach(function (t) {
+      var on = t.dataset.cat === cat; t.classList.toggle("active", on); t.setAttribute("aria-selected", on);
+    });
+    grid.innerHTML = MENU[cat].map(function (x, i) {
+      var img = x.image ? '<img src="' + esc(x.image) + '" alt="' + esc(x.n) + '" loading="lazy">' : x.e;
+      return '<article class="card" style="animation-delay:' + i * 60 + 'ms"><div class="card-img">' + img + '</div><div class="card-body"><h3>' + esc(x.n) + '</h3><p>' + esc(x.d) + '</p>' + (x.price ? '<span class="card-price">' + esc(x.price) + '</span>' : '') + '</div></article>';
+    }).join("");
+  }
+  Object.keys(MENU).forEach(function (cat) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "tab"; b.dataset.cat = cat; b.textContent = cat; b.setAttribute("role", "tab");
+    b.addEventListener("click", function () { show(cat); });
+    tabs.appendChild(b);
+  });
+  show(Object.keys(MENU)[0]);
+
+  /* ---------- Header, intro ---------- */
+  var header = document.getElementById("siteHeader");
+  function upd() { header.classList.toggle("scrolled", window.scrollY > 30); }
+  window.addEventListener("scroll", upd, { passive: true }); upd();
+  var intro = document.getElementById("siteIntro");
+  function hideIntro() { intro.classList.add("hidden"); intro.setAttribute("aria-hidden", "true"); }
+  setTimeout(hideIntro, 1450);
+
+  /* ---------- Modals ---------- */
+  var active = null, prev = null;
+  function openModal(name) {
+    var m = document.getElementById("modal-" + name); if (!m) return;
+    prev = document.activeElement; active = m;
+    m.classList.add("open"); m.setAttribute("aria-hidden", "false"); document.body.classList.add("modal-open");
+    var c = m.querySelector(".modal-close"); if (c) setTimeout(function () { c.focus(); }, 50);
+  }
+  function closeModal() {
+    if (!active) return;
+    active.classList.remove("open"); active.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open"); active = null;
+    if (prev && prev.focus) setTimeout(function () { prev.focus(); }, 20); prev = null;
+  }
+  set("[data-modal]", function (t) { t.addEventListener("click", function (e) { e.preventDefault(); openModal(t.dataset.modal); }); });
+  set("[data-close-modal]", function (t) { t.addEventListener("click", closeModal); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+
+  document.getElementById("currentYear").textContent = String(new Date().getFullYear());
+})();
+</script>
+</body>
+</html>
