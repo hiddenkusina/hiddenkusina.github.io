@@ -41,9 +41,9 @@ p{color:var(--muted)}
 .brand-name{font-size:1.3rem;font-weight:600;letter-spacing:-.035em;white-space:nowrap}.brand-name span{color:var(--gold)}
 .site-intro{position:fixed;z-index:200;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);transition:opacity .9s ease,visibility .9s ease}
 .site-intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.intro-brand{display:flex;align-items:center;flex-direction:column;gap:6px;text-align:center;animation:introReveal 1.2s ease both}
-.intro-logo{width:270px;max-width:80vw;height:auto}
-.intro-name{font-size:clamp(2rem,5vw,4rem);font-weight:500;letter-spacing:-.05em}.intro-name span{color:var(--gold)}
+.intro-brand{display:flex;align-items:center;flex-direction:column;gap:0;text-align:center;animation:introReveal 1.2s ease both}
+.intro-logo{width:400px;max-width:85vw;height:auto}
+.intro-name{line-height:1;margin-top:4px;font-size:clamp(2rem,5vw,4rem);font-weight:500;letter-spacing:-.05em}.intro-name span{color:var(--gold)}
 @keyframes introReveal{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
 .hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden}
 .hero-video{position:absolute;z-index:-3;inset:0;background:linear-gradient(135deg,#1a1400,#0A0A0A),url("images/hero-fallback.jpg") center/cover}
@@ -132,7 +132,7 @@ p{color:var(--muted)}
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-content">
-    <div class="eyebrow">Filipino Catering</div>
+    <div class="eyebrow">Filipino Catering · Avondale, Auckland</div>
     <h1 class="hero-title">Hidden <span class="gold-text">Kusina</span></h1>
     <div class="button-row hero-buttons">
       <a class="button button-primary" href="#contact">Get In Touch</a>
